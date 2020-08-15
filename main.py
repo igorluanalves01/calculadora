@@ -1,5 +1,8 @@
 def somar(a, b):
-    return a + b
+    print("Somando {} + {}".format(a, b))
+    resultado = a + b
+    print("Resultado: {}".format(resultado))
+    return resultado
 
 if __name__ == '__main__':
-    print(somar(10, 20))
+    somar(10, 20)
