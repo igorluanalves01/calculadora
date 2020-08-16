@@ -21,4 +21,3 @@ def divisao(valorm, valorw):
         return valorm / valorw
     return 'nao e possivel dividir por 0'
 
-
