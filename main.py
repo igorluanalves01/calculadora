@@ -1,14 +1,26 @@
 from funcoes import soma, subtrair, multiplicacao, divisao
 ## --------------------------------------------------
+def converter_numero(valor):
+    try:
+        return float(valor.replace(',', '.'))
+    except Exception as e:
+        print('o valor digitado é invalido, indo para próxima pessoa: {}'.format(e))
+        return None
 if __name__ == '__main__':
     # A entrada (input) do peso e da idade de uma pessoa
     continuar_executando = True
+    lista = []
     while continuar_executando:
-        nome = input('qual o seu nome?')
+        nome = input('qual o seu nome? ')
+        lista.append(nome)
         peso = input('digite o seu peso: ')
-        peso = float(peso)
+        peso = converter_numero(peso)
+        if peso is None:
+            continue
         altura = input('digite a sua altura: ')
-        altura = float(altura) # converterndo a alturam em STRING para uma altura em INTEIRO
+        altura = converter_numero(altura) # converterndo a alturam em STRING para uma altura em INTEIRO
+        if altura is None:
+            continue
 
         imc = peso /(altura*altura)
         print(round(imc, 2))
@@ -36,6 +48,15 @@ if __name__ == '__main__':
         encerrar = input('aperte q para encerrar')
         if encerrar == 'q':
             continuar_executando = False
+
+    print('todas as pessoas que testaram: '+str(lista))
+
+    for item in lista:
+        print(item)
+
+        if item == 'igor':
+            print('hum seu nome é igor')
+
 
 
 
